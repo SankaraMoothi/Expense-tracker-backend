@@ -13,6 +13,9 @@ const mongo_url = process.env.MONGO_URL;
 
 const client = new MongoClient(mongo_url);
 client.connect();
+app.get("/", function (request, response) {
+  response.send("🙋‍♂️, 🌏 🎊✨🤩");
+});
 app.use(`/user`, expenseRouter);
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
-export { client };
+export default { client };

@@ -1,17 +1,16 @@
 import express from "express";
 
 import jwt from "jsonwebtoken";
-import {
-  creatExpense,
-  createUser,
-  getAllexpense,
-  getUserByName,
-} from "../service/expenseService.js";
+
 const router = express.Router();
 import bcrypt from "bcrypt";
 import { auth } from "../middleware/auth.js";
+import getAllexpense from "../service/expenseService.js";
+import createUser from "../service/expenseService.js";
+import getUserByName from "../service/expenseService.js";
+import creatExpense from "../service/expenseService.js";
 
-router.get("/", auth, async function (req, res) {
+router.get("/expense", auth, async function (req, res) {
   const username = req.header("username");
 
   if (username) {
