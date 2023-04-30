@@ -28,7 +28,7 @@ router.post("/register", async function (req, res) {
     res.status(400).send({ message: "user Already Exist" });
   } else {
     const hashedPassword = await generateHashedPass(password);
-    const data = [{ username, password: hashedPassword, email, expense: [{}] }];
+    const data = [{ username, password: hashedPassword, email, expense: [] }];
     const user = await createUser(data);
     res.status(200).send(user);
   }
