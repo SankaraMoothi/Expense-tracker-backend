@@ -5,10 +5,10 @@ import jwt from "jsonwebtoken";
 const router = express.Router();
 import bcrypt from "bcrypt";
 import { auth } from "../middleware/auth.js";
-import getAllexpense from "../service/expenseService.js";
-import createUser from "../service/expenseService.js";
-import getUserByName from "../service/expenseService.js";
-import creatExpense from "../service/expenseService.js";
+import { getAllexpense } from "../service/expenseService.js";
+import { createUser } from "../service/expenseService.js";
+import { getUserByName } from "../service/expenseService.js";
+import { creatExpense } from "../service/expenseService.js";
 
 router.get("/expense", auth, async function (req, res) {
   const username = req.header("username");

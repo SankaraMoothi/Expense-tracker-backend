@@ -18,4 +18,4 @@ app.get("/", function (request, response) {
 });
 app.use(`/user`, expenseRouter);
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
-export default { client };
+export { client };
